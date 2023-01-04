@@ -10,6 +10,6 @@ Cocov::PluginKit.run do
 
   data = JSON.load_file("/tmp/output.json")
   data["warnings"].each do |entry|
-    emit_problem(kind: :security, file: entry["file"], line_start: entry["line"], line_end: entry["line"], message: entry["message"], uid: entry["fingerprint"])
+    emit_issue(kind: :security, file: entry["file"], line_start: entry["line"], line_end: entry["line"], message: entry["message"], uid: entry["fingerprint"])
   end
 end
