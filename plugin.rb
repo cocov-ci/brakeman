@@ -1,6 +1,6 @@
 Cocov::PluginKit.run do
   begin
-    exec("brakeman -A --no-exit-on-warn -o /tmp/output.json", env: ENV)
+    exec("brakeman -A --no-exit-on-warn -o /tmp/output.json")
   rescue PluginKit::Exec::ExecutionError => e
     puts e.stdout
     puts e.stderr
