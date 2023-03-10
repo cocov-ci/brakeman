@@ -1,7 +1,7 @@
 Cocov::PluginKit.run do
   begin
     exec("brakeman -A --no-exit-on-warn -o /tmp/output.json")
-  rescue PluginKit::Exec::ExecutionError => e
+  rescue Cocov::PluginKit::Exec::ExecutionError => e
     puts e.stdout
     puts e.stderr
     puts "ERROR: Process brakeman exited with status #{e.status}"
